@@ -134,6 +134,7 @@ button, input {
   width: 83%;
 }
 
+
 .input-group-text {
   & svg {
     color: #fff;
@@ -442,6 +443,7 @@ button, input {
   align-items: center;
   background: url("~@/assets/images/register_background.svg") top center no-repeat;
   background-size: contain;
+  margin-top: -20rem;
   @media (max-width: 991px) {
     background-size: cover;
     background-position-y: -3rem;

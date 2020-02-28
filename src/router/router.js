@@ -18,8 +18,8 @@ const router = new Router({
       path: '/rules',
       name: 'rules',
       beforeEnter() {
-        window.open("https://nesquik.specproagency.by/rules/rules-cert.pdf",
-            '_blank');
+        window.open("https://naturella-fe.specproagency.by/rules/rules-cert.pdf",
+            '_parent');
       }
     },
     {

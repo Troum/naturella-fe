@@ -45,7 +45,7 @@
                                     font-awesome-icon( :icon="['fas', 'phone']" size="2x" color="#fff" style="transform: rotate(90deg)")
                             b-col.text-left( cols="12" )
                                 span.call.text-white.h5.font-weight-bold( @click="callTo" style="margin-left: -5%" ) +375 29 608 19 49
-                    b-col.p-0.text-center.position-relative( cols="12" )
+                    b-col.p-0.text-center.position-relative#footer( cols="12" )
                         b-col.mx-auto.p-0( cols="12" )
                             b-row.m-0.p-0.position-relative
                                 b-col.mx-auto.p-0.text-center( cols="10" )
@@ -70,3 +70,19 @@
         }
     }
 </script>
+
+<style scoped>
+
+    #game {
+        margin-top: -8rem;
+    }
+    #footer {
+        margin-top: -30rem;
+        z-index: -1;
+    }
+    /* #registration:first-child {
+        margin-top: 0rem!important;
+        background-color: #fff!important;
+    } */
+
+</style>

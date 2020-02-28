@@ -11,7 +11,7 @@
                     img.img-fluid( src="@/assets/images/logo.png" )
                 b-nav-item.text-uppercase.text-white.mx-auto.my-4.font-weight-bold( v-for="(item, i) in $store.getters.menu"
                     :key="i" @click="scrollTo(item.anchor)"  style="z-index: 1") {{ item.title }}
-                b-nav-item.text-uppercase.text-white.mx-auto.my-4.font-weight-bold( @click="$router.push({name: 'previous'}).catch(() => {})" ) Результаты РИ
+                b-nav-item.text-uppercase.text-white.mx-auto.my-4.font-weight-bold.resultri( @click="$router.push({name: 'previous'}).catch(() => {})" ) Результаты РИ always
 
 </template>
 
@@ -51,3 +51,20 @@
         }
     }
 </script>
+
+<style scoped>
+    .resultri {
+        background: linear-gradient(106.26deg, #7F41C1 3.05%, #9454D9 27.48%, #AE75EC 50.72%, #9454D9 70.48%, #7F41C1 97.9%);
+        border-radius: 50px;
+        box-shadow: 3px 6px 10px rgba(61, 22, 115, 0.2);
+        height: 3rem;
+        width: 17rem;
+        margin-top: 2.3rem!important;
+    }
+    a {
+        color: white!important;
+    }
+    a:hover {
+        color: rgb(190, 243, 174)!important;
+    }
+</style>

@@ -163,3 +163,15 @@
         }
     }
 </script>
+
+<style scoped>
+@media screen and (min-width: 700px) {
+    #participant {
+    margin-top: 10rem!important;
+    padding-top: 5rem!important;
+    margin-bottom: 15rem;
+}
+}
+/*  */
+    
+</style>
