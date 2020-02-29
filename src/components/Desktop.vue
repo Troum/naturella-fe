@@ -10,7 +10,7 @@
                             h1.text-uppercase.font-weight-bold.text-white.text-left Купи naturella и выиграй поездку
                                 br
                                 span( style="font-size: 135%" ) в будапешт
-                            b-button( type="button" size="lg" ) Регистрация
+                            b-button( type="button" size="lg" @click="$scrollTo('#registration')") Регистрация
         b-col.p-0.text-center.position-relative#rules( cols="12" )
             b-col.mx-auto.p-0( cols="12" )
                 b-row.m-0.p-0.position-relative

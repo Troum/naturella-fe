@@ -1,17 +1,19 @@
 <template lang="pug">
     b-navbar.always_navbar.bg-transparent( toggleable="lg" type="dark" variant="info" )
-        b-navbar-brand.text-center.mx-auto.w-100( v-if="mobile" )
+        b-navbar-brand.text-center.mx-auto.w-100( v-if="mobile" @click="$router.push({name: 'main'}).catch(() => {})")
             img.img-fluid( v-if="!mobile" src="@/assets/images/logo.png" )
         b-button#toggler.bg-transparent.border-0( v-if="mobile" @click="onClick" target="nav-collapse" :style="mobile ? 'position: absolute; top: 20px; right: 6px; z-index: 5' : ''")
             font-awesome-icon.text-white( v-if="!isToggled" transform size="lg" :icon="['fas', 'bars']" )
             font-awesome-icon.text-white( v-else size="lg" :icon="['fas', 'times']" )
         b-collapse#nav-collapse( is-nav )
             b-navbar-nav.mx-auto.always_navbar_nav.d-flex.text-white( :style="style" )
-                b-nav-item( v-if="!mobile" )
+                b-nav-item( v-if="!mobile" @click="$router.push({name: 'main'}).catch(() => {})" )
                     img.img-fluid( src="@/assets/images/logo.png" )
                 b-nav-item.text-uppercase.text-white.mx-auto.my-4.font-weight-bold( v-for="(item, i) in $store.getters.menu"
                     :key="i" @click="scrollTo(item.anchor)"  style="z-index: 1") {{ item.title }}
-                b-nav-item.text-uppercase.text-white.mx-auto.my-4.font-weight-bold.resultri( @click="$router.push({name: 'previous'}).catch(() => {})" ) Результаты РИ always
+                b-nav-item.text-uppercase.text-white.mx-auto.my-4.font-weight-bold.resultri(
+                    @click="$router.push({name: 'previous'}).catch(() => {}); isToggled = !isToggled; $root.$emit('bv::toggle::collapse',target)"
+                    ) Результаты РИ always
 
 </template>
 
@@ -42,10 +44,18 @@
                 }
             },
             scrollTo(element) {
-                this.$scrollTo(element);
-                if(this.mobile && this.isToggled)  {
-                    this.isToggled = !this.isToggled;
-                    this.$root.$emit('bv::toggle::collapse', this.target)
+                if(this.$route.name.includes('main')) {
+                    this.$scrollTo(element);
+                    if(this.mobile && this.isToggled)  {
+                        this.isToggled = !this.isToggled;
+                        this.$root.$emit('bv::toggle::collapse', this.target)
+                    }
+                } else {
+                    this.$router.push({name: 'main'});
+                    if(this.mobile && this.isToggled)  {
+                        this.isToggled = !this.isToggled;
+                        this.$root.$emit('bv::toggle::collapse', this.target)
+                    }
                 }
             }
         }

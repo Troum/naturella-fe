@@ -437,6 +437,27 @@ button, input {
   }
 }
 
+.button-register-anchor {
+  position: absolute;
+  bottom: 35%;
+  left: calc((100% - 70%) / 2);
+  width: 70%;
+  align-self: flex-start;
+  border: 3px solid #fff;
+  border-radius: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: rgb(249,178,110);
+  background: -moz-radial-gradient(circle, rgba(249,178,110,1) 0%, rgba(240,126,23,1) 50%, rgba(240,126,23,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(249,178,110,1) 0%, rgba(240,126,23,1) 50%, rgba(240,126,23,1) 100%);
+  background: radial-gradient(circle, rgba(249,178,110,1) 0%, rgba(240,126,23,1) 50%, rgba(240,126,23,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f9b26e",endColorstr="#f07e17",GradientType=1);
+  &:hover {
+    color: #FDFF00;
+    border-color: #FDFF00;
+  }
+}
+
 .always_registration_background {
   display: flex;
   justify-content: center;

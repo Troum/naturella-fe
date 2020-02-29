@@ -2,6 +2,7 @@
     b-row.m-0.p-0
         b-col.p-0.m-0.text-center.position-relative( cols="12" )
             img.img-fluid( src="@/assets/images/first-screen.svg" alt="Naturella" )
+            b-button.button-register-anchor( type="button" size="lg" @click="$scrollTo('#registration')") Регистрация
         b-col.p-0.m-0.text-center.position-relative#rules( cols="12" )
             img.img-fluid( src="@/assets/images/m-mechanic.svg" alt="Naturella Mecanic" )
         b-col.p-0.m-0.text-center.position-relative#conditions( cols="12" )
