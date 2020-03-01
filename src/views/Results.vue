@@ -53,8 +53,8 @@
                                 style="max-height: 26.5rem; min-height: 5rem; overflow-y: auto" )
                                 draggable( v-model="items" group="participants" )
                                     b-card.border-0.bg-warning.shadow-sm.my-1( v-for="element in items" :key="element.id" )
-                                        strong Имя:
-                                        span &nbsp;{{element.name}}&nbsp;
+                                        strong ФИО:
+                                        span &nbsp;{{element.surname}}&nbsp;{{element.name}}&nbsp;{{element.secondName}}&nbsp;
                                         br
                                         strong Номер чека:&nbsp;
                                         b-badge.text-dark( variant="light" ) {{ element.check_number }}
@@ -76,8 +76,8 @@
                                         v-for="(element, i) in form.participants" :key="element.id"
                                         @click="openAddPrize(i)"  )
                                         div
-                                            strong Имя:
-                                            span &nbsp;{{element.name}}&nbsp;
+                                            strong ФИО:
+                                            span &nbsp;{{element.surname}}&nbsp;{{element.name}}&nbsp;{{element.secondName}}&nbsp;
                                         div
                                             strong Номер чека:&nbsp;
                                             b-badge.text-dark( variant="light" ) {{ element.check_number }}

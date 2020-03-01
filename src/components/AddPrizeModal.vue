@@ -1,7 +1,7 @@
 <template lang="pug">
     b-modal#add-prize( title="Добавить приз " hide-footer centered)
         b-form#prize( @submit.prevent="submit" )
-            b-form-group( label="Какой розыгрыш" )
+            //b-form-group( label="Какой розыгрыш" )
                 b-form-radio-group(v-model="result" @change="chooseOption" :options="options" name="some-result" stacked)
             b-form-group.my-2( label="Наименование приза" )
                 b-form-input( type="text" v-model="prize" )

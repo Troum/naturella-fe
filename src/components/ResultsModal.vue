@@ -4,7 +4,7 @@
             b-table#results-items( hover borderless :items="items" :fields="fields" :per-page="pagination.perPage"
                 :current-page="pagination.current" )
                 template( v-slot:cell(winners)="row" )
-                    p( v-for="(winner, i) in row.item.winners" :key="i") {{ winner.name }}
+                    p( v-for="(winner, i) in row.item.winners" :key="i") {{ winner.surname }}&nbsp;{{ winner.name }}&nbsp;{{ winner.secondName }}
                 template( v-slot:cell(actions)="row" )
                     b-button.float-right.my-auto( pill size="sm" @click="info(row.item)" variant="danger" style="max-width: 1.9rem")
                         font-awesome-icon.text-white( :icon="['fas', 'times']" )

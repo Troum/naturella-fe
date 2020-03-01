@@ -66,6 +66,7 @@
                     })
                     .catch(error => {
                         this.$handler.handleError(error.response.status);
+                        this.$root.$emit('error', error.response.data.error);
                     })
                     .finally(() => {
                         this.$store.commit('loading');

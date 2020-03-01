@@ -9,7 +9,6 @@
 </template>
 
 <script>
-    import axios from "axios"
     export default {
         data() {
           return {
@@ -17,9 +16,8 @@
           }
         },
         mounted() {
-            axios.get('https://alidi-distribution.by/api/v1/winners')
+            this.$http.get('api/v1/old-winners')
             .then(response => {
-                // eslint-disable-next-line no-console
                 this.winners = response.data.winners;
             })
             .catch(() => {
